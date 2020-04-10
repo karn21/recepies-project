@@ -11,12 +11,12 @@ function Navbar() {
       <div className="navbar-collapse collapse show ml-sm-5">
         <ul className="navbar-nav">
           <li className="navbar-item">
-            <Link to="/" className="nav-link">
+            <Link to="/" className="nav-link text-dark">
               Home
             </Link>
           </li>
           <li className="navbar-item">
-            <Link to="/recepies" className="nav-link">
+            <Link to="/recepies" className="nav-link text-dark">
               Recepies
             </Link>
           </li>

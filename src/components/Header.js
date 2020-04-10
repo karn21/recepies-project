@@ -19,7 +19,7 @@ function Header({ children, title, styleClass }) {
 
 Header.defaultProps = {
   title: "Recepies",
-  styleClass: "header-hero",
+  styleClass: "default-hero",
 };
 
 export default Header;
