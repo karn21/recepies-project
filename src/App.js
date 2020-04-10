@@ -6,12 +6,13 @@ import Recepies from "./pages/Recepies";
 import SingleRecepie from "./pages/SIngleRecepie";
 import Default from "./pages/Default";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <main>
-        <nav></nav>
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/recepies" exact component={Recepies} />
