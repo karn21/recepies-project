@@ -1,8 +1,18 @@
 import React, { Component } from "react";
+import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 export class Home extends Component {
   render() {
-    return <h4>Hello from Home</h4>;
+    return (
+      <Header title="Awesome Recepies">
+        <Link to="/recepies">
+          <button className="btn btn-secondary btn-lg mt-3">
+            Search Receipies
+          </button>
+        </Link>
+      </Header>
+    );
   }
 }
 
