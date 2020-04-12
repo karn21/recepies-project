@@ -9,7 +9,7 @@ export class Recepies extends Component {
   }
 
   state = {
-    recepies: recepieData,
+    recepies: recepieData.recipes,
     search: "",
   };
 
@@ -31,7 +31,10 @@ export class Recepies extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         ></Search>
-        <RecepieList recepies={this.state.recepies}></RecepieList>
+        <RecepieList
+          recepies={this.state.recepies}
+          baseUrl={this.state.baseUrl}
+        ></RecepieList>
       </>
     );
   }

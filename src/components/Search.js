@@ -7,11 +7,11 @@ function Search(props) {
     <div className="container">
       <div className="row align-items-center">
         <div className="col-10 col-md-8 mx-auto text-center">
-          <h1 className="text-slanted text-capitalize my-3 ">
+          <h1 className="text-slanted text-capitalize mt-5 mb-3">
             Search Recepies with <span className="text-orange">Food2Fork</span>
           </h1>
-          <form onSubmit={handleSubmit} className="my-3">
-            <label className="text-capitalize" htmlFor="search">
+          <form onSubmit={handleSubmit} className="my-4">
+            <label className="text-capitalize mb-3" htmlFor="search">
               Type recepies seperated by commas
             </label>
             <div className="input-group">
