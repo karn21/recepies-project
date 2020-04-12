@@ -14,7 +14,7 @@ export class Recepie extends Component {
       vegetarian,
     } = this.props.recepie;
     return (
-      <div className="col-10 col-md-6 col-lg-4 mx-auto">
+      <div className="col-10 col-md-6 col-lg-4 mx-auto my-3">
         <div className="card my-3" style={{ height: "100%" }}>
           <img
             src={`${image}`}

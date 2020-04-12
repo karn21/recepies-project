@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { recipeData } from "../data/tempDetails";
 import { Link } from "react-router-dom";
 
 export class SingleRecepie extends Component {
@@ -8,14 +7,26 @@ export class SingleRecepie extends Component {
     const id = this.props.match.params.id;
 
     this.state = {
-      recepie: recipeData,
+      recepie: {},
       id,
-      loading: false,
+      loading: true,
     };
   }
 
-  componentDidMount() {
-    document.getElementById("sum").innerHTML = this.state.recepie.summary;
+  async componentDidMount() {
+    const url = `https://api.spoonacular.com/recipes/${this.state.id}/information?includeNutrition=false&apiKey=${process.env.REACT_APP_API_KEY}`;
+    try {
+      const response = await fetch(url);
+      const responseData = await response.json();
+      console.log(responseData);
+      this.setState({
+        recepie: responseData,
+        loading: false,
+      });
+      document.getElementById("sum").innerHTML = this.state.recepie.summary;
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
@@ -28,7 +39,7 @@ export class SingleRecepie extends Component {
       extendedIngredients,
       analyzedInstructions,
     } = this.state.recepie;
-    console.log(analyzedInstructions[0].steps);
+    // console.log(analyzedInstructions[0].steps);
     if (this.state.loading) {
       return (
         <div className="container">
