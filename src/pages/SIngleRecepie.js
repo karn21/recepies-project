@@ -57,7 +57,10 @@ export class SingleRecepie extends Component {
       <div className="container my-5">
         <div className="row">
           <div className="col-10 col-md-6 mx-auto my-3">
-            <Link to="/" className="btn btn-warning text-capitalize mb-5">
+            <Link
+              to="/recepies"
+              className="btn btn-warning text-capitalize mb-5"
+            >
               Back to Recepies
             </Link>
             <img
@@ -66,16 +69,16 @@ export class SingleRecepie extends Component {
               style={{ maxHeight: "30rem" }}
               alt="recepie"
             />
-            <div className="mt-3" id="sum"></div>
+            <div className="mt-3 text-justify" id="sum"></div>
           </div>
           <div className="col-10 col-md-6 mx-auto my-3">
             <h2 className="text-uppercase">{title}</h2>
-            <h5 className="text-warning text-capitalize">
+            <h5 className="text-warning text-capitalize mt-3">
               provided by {sourceName}
             </h5>
             <a
               href={sourceUrl}
-              className="btn btn-primary text-capitalize mt-2"
+              className="btn btn-primary text-capitalize mt-3"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -83,7 +86,7 @@ export class SingleRecepie extends Component {
             </a>
             <a
               href={spoonacularSourceUrl}
-              className="btn btn-success text-capitalize mt-2 mx-2"
+              className="btn btn-success text-capitalize mt-3 mx-2"
               target="_blank"
               rel="noopener noreferrer"
             >
