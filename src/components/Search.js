@@ -24,7 +24,11 @@ function Search(props) {
                 value={search}
               />
               <div className="input-group-append">
-                <button type="submit" className="btn btn-primary text-white">
+                <button
+                  type="submit"
+                  disabled={search ? false : true}
+                  className="btn btn-primary text-white"
+                >
                   <i className="fas fa-search"></i>
                 </button>
               </div>

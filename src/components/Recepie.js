@@ -13,11 +13,12 @@ export class Recepie extends Component {
       sourceUrl,
       vegetarian,
     } = this.props.recepie;
+    const { baseUrl } = this.props;
     return (
       <div className="col-10 col-md-6 col-lg-4 mx-auto my-3">
         <div className="card my-3" style={{ height: "100%" }}>
           <img
-            src={`${image}`}
+            src={baseUrl ? `${baseUrl}${image}` : `${image}`}
             style={{ height: "14rem" }}
             alt=""
             className="img-card-top"
@@ -29,7 +30,9 @@ export class Recepie extends Component {
             </h6>
             Ready in : {readyInMinutes} minutes
             <br /> servings : {servings}
-            {vegetarian ? (
+            {baseUrl ? (
+              " "
+            ) : vegetarian ? (
               <div className="badge badge-success float-right">Veg</div>
             ) : (
               <div className="badge badge-danger float-right">Non-Veg</div>
@@ -39,14 +42,16 @@ export class Recepie extends Component {
             <Link to={`/recepies/${id}`}>
               <div className="btn btn-primary">Details</div>
             </Link>
-            <a
-              href={sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary mx-2 text-capitalize"
-            >
-              Recepie Url
-            </a>
+            {!baseUrl && (
+              <a
+                href={sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary mx-2 text-capitalize"
+              >
+                Recepie Url
+              </a>
+            )}
           </div>
         </div>
       </div>
